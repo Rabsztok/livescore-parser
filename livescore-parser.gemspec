@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.files       = ['bin/livescore-parser', 'lib/livescore-parser.rb', 'lib/livescore-parser/parser.rb', 'lib/livescore-parser/writer.rb', 'lib/livescore-parser/hash_helper.rb', 'pages.yml']
   s.homepage    = 'https://github.com/Rabsztok/livescore-parser'
   s.license     = 'GPL'
-  s.add_dependency 'builder', '~> 3.2.0'
-  s.add_dependency 'mechanize', '~> 2.7.0'
-  s.add_dependency 'nokogiri', '~> 1.6.4'
+  s.add_dependency 'builder', '~> 3.2'
+  s.add_dependency 'mechanize', '~> 2.7'
+  s.add_dependency 'nokogiri', '~> 1.6'
 end
