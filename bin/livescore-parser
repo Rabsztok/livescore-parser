@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.push File.expand_path("../lib", File.dirname(__FILE__)) # add library to load path
+
+require 'livescore-parser'
+require 'optparse'
+
+options   = { :destination => '/home/hosting/scores/' }
+OptionParser.new do |op|
+  op.banner = <<-eos
+  #{LivescoreParser::DESCRIPTION}
+
+  Usage: livescore-parser [options]
+
+  eos
+
+  op.on("-h", "--help") do
+    puts op.to_s
+    exit!
+  end
+
+  op.on("-v", "--version") do
+    puts LivescoreParser::VERSION
+    exit!
+  end
+
+  op.on("-c", "--pages PATH", "path to yml channel list") do |path|
+    options[:pages] = path
+  end
+
+  op.on("-d", "--destination PATH", "directory with XML files with parsed scores") do |path|
+    options[:destination] = path
+  end
+end.parse!
+
+begin
+  ARGV.clear
+  LivescoreParser.run!(options)
+rescue Exception => ex
+  puts ex.message
+  exit!
+end

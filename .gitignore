@@ -1,0 +1,12 @@
+# documentation and code coverage
+#
+.yardoc
+/coverage
+/doc
+
+# ignore gem builds
+/*.gem
+
+# test temps
+/test/temporary/*
+/scores
