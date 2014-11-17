@@ -2,9 +2,9 @@ PATH
   remote: .
   specs:
     livescore-parser (0.1.0)
-      builder
-      mechanize
-      nokogiri
+      builder (~> 3.2.0)
+      mechanize (~> 2.7.0)
+      nokogiri (~> 1.6.4)
 
 GEM
   remote: https://rubygems.org/
