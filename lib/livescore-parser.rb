@@ -9,7 +9,6 @@ module LivescoreParser
   require 'yaml'
   require 'mechanize'
   require 'nokogiri'
-  require 'pry'
 
   require_relative 'livescore-parser/parser'  # Parsing from website
   require_relative 'livescore-parser/writer'  # Writing from ruby hash to XML
