@@ -8,9 +8,9 @@ module LivescoreParser
     # Runs dynamic-sprites command.
     #
     def run
-      LivescoreParser.selected_pages.map do |name, url|
-        data = download(url)
-        { name: name, data: data } unless data.nil?
+      LivescoreParser.selected_pages.map do |name, options|
+        data = download(options['url'])
+        { name: name, path: options['path'], data: data } unless data.nil?
       end.compact
     end
 

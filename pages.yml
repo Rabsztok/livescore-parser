@@ -1,1 +1,3 @@
-soccer: 'http://www.livescore.com/'
+soccer:
+  url: 'http://www.livescore.com/'
+  path: 'soccer.xml'

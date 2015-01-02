@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <node>
+    <wiersz>1</wiersz>
+    <czas>19:45</czas>
+    <gracz1>Cardiff City</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Colchester United</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>England - FA Cup</kraj>
+  </node>
+  <node>
+    <wiersz>2</wiersz>
+    <czas>19:45</czas>
+    <gracz1>Milton Keynes Dons</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Chesterfield</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>England - FA Cup</kraj>
+  </node>
+  <node>
+    <wiersz>3</wiersz>
+    <czas>20:30</czas>
+    <gracz1>Belenenses</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Academica</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Portugal - Liga ZON Sagres</kraj>
+  </node>
+  <node>
+    <wiersz>4</wiersz>
+    <czas>19:30</czas>
+    <gracz1>Prestatyn Town FC</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Rhyl</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Wales - Premier League</kraj>
+  </node>
+  <node>
+    <wiersz>5</wiersz>
+    <czas>19:45</czas>
+    <gracz1>Bangor City</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Bala Town</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Wales - Premier League</kraj>
+  </node>
+  <node>
+    <wiersz>6</wiersz>
+    <czas>12:00</czas>
+    <gracz1>Hapoel Natzrat-Elite</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Maccabi Herzeliya</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Israel - Leumit League</kraj>
+  </node>
+  <node>
+    <wiersz>7</wiersz>
+    <czas>12:30</czas>
+    <gracz1>Hapoel Rishon Lezion</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Maccabi Ahi Nazrat</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Israel - Leumit League</kraj>
+  </node>
+  <node>
+    <wiersz>8</wiersz>
+    <czas>13:00</czas>
+    <gracz1>Hapoel Kfar Saba</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Ironi Tiberias</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Israel - Leumit League</kraj>
+  </node>
+  <node>
+    <wiersz>9</wiersz>
+    <czas>13:00</czas>
+    <gracz1>Maccabi Kiryat Gat</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Bnei Yehuda Tel Aviv</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Israel - Leumit League</kraj>
+  </node>
+  <node>
+    <wiersz>10</wiersz>
+    <czas>23:00</czas>
+    <gracz1>O'Higgins</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Union La Calera</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Chile - Primera:: clausura</kraj>
+  </node>
+  <node>
+    <wiersz>11</wiersz>
+    <czas>FT</czas>
+    <gracz1>Melbourne Victory</gracz1>
+    <wynik1>1</wynik1>
+    <gracz2>Perth Glory</gracz2>
+    <wynik2>2</wynik2>
+    <kraj>Australia - Hyundai A-League</kraj>
+  </node>
+  <node>
+    <wiersz>12</wiersz>
+    <czas>08:30</czas>
+    <gracz1>Sydney FC</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>Newcastle Jets</gracz2>
+    <wynik2>?</wynik2>
+    <kraj></kraj>
+  </node>
+  <node>
+    <wiersz>13</wiersz>
+    <czas>15:00</czas>
+    <gracz1>FAR Rabat</gracz1>
+    <wynik1>?</wynik1>
+    <gracz2>RSB Berkane</gracz2>
+    <wynik2>?</wynik2>
+    <kraj>Morocco - Botola Pro</kraj>
+  </node>
+</xml>

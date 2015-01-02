@@ -27,10 +27,6 @@ OptionParser.new do |op|
   op.on("-c", "--pages PATH", "path to yml channel list") do |path|
     options[:pages] = path
   end
-
-  op.on("-d", "--destination PATH", "directory with XML files with parsed scores") do |path|
-    options[:destination] = path
-  end
 end.parse!
 
 begin

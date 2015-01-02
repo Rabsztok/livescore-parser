@@ -4,24 +4,19 @@ require_relative 'hash_helper'
 module LivescoreParser
   class Writer
 
-    def initialize(scores, destination)
+    def initialize(scores)
       @scores = scores
-      @destination = destination
     end
 
     def run
       @scores.each do |page|
-        File.open(xml_path(page[:name]), "w+") do |file|
+        File.open(page[:path]), "w+") do |file|
           file.write(build_xml(page[:data]))
         end
       end
     end
 
     private
-
-    def xml_path(name)
-      File.join(@destination, "#{name}_#{Date.today.to_s}.xml")
-    end
 
     # Builds XML data from schedule Hash
     def build_xml(data)
