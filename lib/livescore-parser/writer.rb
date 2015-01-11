@@ -10,7 +10,7 @@ module LivescoreParser
 
     def run
       @scores.each do |page|
-        File.open(page[:path]), "w+") do |file|
+        File.open(page[:path], "w+") do |file|
           file.write(build_xml(page[:data]))
         end
       end
