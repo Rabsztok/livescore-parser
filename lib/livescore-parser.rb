@@ -2,7 +2,6 @@ module LivescoreParser
 
   #----------------------------------------------------------------------------
 
-  VERSION     = "0.1.5"
   SUMMARY     = "livescore parser"
   DESCRIPTION = "Downloads livescore results to XML files"
 
