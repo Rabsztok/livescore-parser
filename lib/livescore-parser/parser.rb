@@ -33,17 +33,20 @@ module LivescoreParser
       data.map do |row|
         if row.css('td').any?
           index += 1
+          time_raw = row.css('td')[0].text.strip
           {
             wiersz: index,
-            czas: row.css('td')[0].text.strip,
+            czas: ((Time.parse(time_raw) + 3600).strftime('%H:%M') if time_raw.match(/[0-9]+:[0-9]+/)),
             gracz1: row.css('td')[1].text.strip,
             wynik1: row.css('td')[2].text.strip.match(/^[0-9\?]+/).to_s,
             gracz2: row.css('td')[3].text.strip,
             wynik2: row.css('td')[2].text.strip.match(/[0-9\?]+$/).to_s,
+            data: @date,
             kraj: @country
           }
         else
           @country = row.css('.league').text.strip
+          @date = row.css('.date').text.strip
           next
         end
       end.compact
