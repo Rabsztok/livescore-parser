@@ -36,7 +36,7 @@ module LivescoreParser
           time_raw = row.css('td')[0].text.strip
           {
             wiersz: index,
-            czas: ((Time.parse(time_raw) + 3600).strftime('%H:%M') if time_raw.match(/[0-9]+:[0-9]+/)),
+            czas: (time_raw.match(/[0-9]+:[0-9]+/)) ? (Time.parse(time_raw) + 3600).strftime('%H:%M') : time_raw,
             gracz1: row.css('td')[1].text.strip,
             wynik1: row.css('td')[2].text.strip.match(/^[0-9\?]+/).to_s,
             gracz2: row.css('td')[3].text.strip,
