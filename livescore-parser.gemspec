@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'livescore-parser'
-  s.version     = '0.1.7'
+  s.version     = '0.1.8'
   s.executables << 'livescore-parser'
   s.date        = '2013-09-24'
   s.summary     = 'TV Channel parser'
