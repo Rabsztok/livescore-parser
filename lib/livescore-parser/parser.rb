@@ -20,7 +20,7 @@ module LivescoreParser
 
     def download(url)
       page = Nokogiri::HTML(@agent.get(url).body)
-      data = build_hash page.css(".content .row, .content .row-gray")
+      data = build_hash page.css(".content > *")
       if data.empty?
         puts "Missing data"
         return nil
@@ -43,10 +43,10 @@ module LivescoreParser
             wynik1: row.css('.sco').text.strip.match(/^[0-9\?]+/).to_s,
             gracz2: row.css('.sco + .ply').text.strip,
             wynik2: row.css('.sco').text.strip.match(/[0-9\?]+$/).to_s,
-            data: @date,
-            kraj: @country
+            data: @date.clone,
+            kraj: @country.clone
           }
-        else
+        elsif row.attr('class').match 'row-tall'
           @country = row.css('.left strong').text.strip
           @date = row.css('.right').text.strip
           next
