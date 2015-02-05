@@ -1,3 +1,5 @@
+require 'pry'
+
 module LivescoreParser
   class Parser
 
@@ -18,7 +20,7 @@ module LivescoreParser
 
     def download(url)
       page = Nokogiri::HTML(@agent.get(url).body)
-      data = build_hash page.css(".content tr")
+      data = build_hash page.css(".content .row, .content .row-gray")
       if data.empty?
         puts "Missing data"
         return nil
@@ -31,22 +33,22 @@ module LivescoreParser
     def build_hash(data)
       index = 0
       data.map do |row|
-        if row.css('td').any?
+        if row.attr('class').match 'row-gray'
           index += 1
-          time_raw = row.css('td')[0].text.strip
+          time_raw = row.css('.min').text.strip
           {
             wiersz: index,
             czas: (time_raw.match(/[0-9]+:[0-9]+/)) ? (Time.parse(time_raw) + 3600).strftime('%H:%M') : time_raw,
-            gracz1: row.css('td')[1].text.strip,
-            wynik1: row.css('td')[2].text.strip.match(/^[0-9\?]+/).to_s,
-            gracz2: row.css('td')[3].text.strip,
-            wynik2: row.css('td')[2].text.strip.match(/[0-9\?]+$/).to_s,
+            gracz1: row.css('.ply.tright').text.strip,
+            wynik1: row.css('.sco').text.strip.match(/^[0-9\?]+/).to_s,
+            gracz2: row.css('.sco + .ply').text.strip,
+            wynik2: row.css('.sco').text.strip.match(/[0-9\?]+$/).to_s,
             data: @date,
             kraj: @country
           }
         else
-          @country = row.css('.league').text.strip
-          @date = row.css('.date').text.strip
+          @country = row.css('.left strong').text.strip
+          @date = row.css('.right').text.strip
           next
         end
       end.compact
