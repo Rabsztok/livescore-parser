@@ -32,6 +32,7 @@ module LivescoreParser
             node.gracz2 score[:gracz2]
             node.wynik2 score[:wynik2]
             node.kraj   score[:kraj]
+            node.liga   score[:liga]
             node.data   score[:data]
           end
         end

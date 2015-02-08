@@ -44,10 +44,12 @@ module LivescoreParser
             gracz2: row.css('.sco + .ply').text.strip,
             wynik2: row.css('.sco').text.strip.match(/[0-9\?]+$/).to_s,
             data: @date.clone,
-            kraj: @country.clone
+            kraj: @country.clone,
+            liga: @league.clone
           }
         elsif row.attr('class').match 'row-tall'
-          @country = row.css('.left strong').text.strip
+          @country = row.css('.left a:first').text.strip
+          @league = row.css('.left a:last').text.strip
           @date = row.css('.right').text.strip
           next
         end
