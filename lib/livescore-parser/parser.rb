@@ -5,6 +5,7 @@ module LivescoreParser
 
     def initialize
       @agent = Mechanize.new
+      @utc_offset = Time.new.utc_offset / 3600
     end
 
     # Runs dynamic-sprites command.
@@ -19,7 +20,7 @@ module LivescoreParser
     private
 
     def download(url)
-      page = Nokogiri::HTML(@agent.get(url).body)
+      page = Nokogiri::HTML(@agent.get(url, { gz: "#{@utc_offset}.0" }).body)
       data = build_hash page.css(".content > *")
       if data.empty?
         puts "Missing data"
