@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    livescore-parser (0.2.1)
+    livescore-parser (0.2.3)
       builder (~> 3.2)
       mechanize (~> 2.7)
       nokogiri (~> 1.6)

@@ -5,7 +5,11 @@ module LivescoreParser
 
     def initialize
       @agent = Mechanize.new
-      @utc_offset = Time.new.utc_offset / 3600
+      @offset = Time.new.utc_offset + (7 * 3600)
+      cookie = Mechanize::Cookie.new('tz', (@offset / 3600).to_s)
+      cookie.path = '/'
+      cookie.domain = '.www.livescore.com'
+      @agent.cookie_jar.add(cookie)
     end
 
     # Runs dynamic-sprites command.
@@ -20,7 +24,7 @@ module LivescoreParser
     private
 
     def download(url)
-      page = Nokogiri::HTML(@agent.get(url, { gz: "#{@utc_offset}.0" }).body)
+      page = Nokogiri::HTML(@agent.get(url).body)
       data = build_hash page.css(".content > *")
       if data.empty?
         puts "Missing data"
@@ -39,7 +43,7 @@ module LivescoreParser
           time_raw = row.css('.min').text.strip
           {
             wiersz: index,
-            czas: (time_raw.match(/[0-9]+:[0-9]+/)) ? (Time.parse(time_raw) + Time.new.utc_offset).strftime('%H:%M') : time_raw,
+            czas: (time_raw.match(/[0-9]+:[0-9]+/)) ? (Time.parse(time_raw) + Time.new.utc_offset - @offset).strftime('%H:%M') : time_raw,
             gracz1: row.css('.ply.tright').text.strip,
             wynik1: row.css('.sco').text.strip.match(/^[0-9\?]+/).to_s,
             gracz2: row.css('.sco + .ply').text.strip,
