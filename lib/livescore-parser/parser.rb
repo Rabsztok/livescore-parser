@@ -41,7 +41,7 @@ module LivescoreParser
         if row.attr('class').match 'row-gray'
           index += 1
           time_raw = row.css('.min').text.strip
-          local_time = Time.parse(time_raw) + Time.new.utc_offset - @offset
+          local_time = Time.parse(time_raw) + Time.new.utc_offset - @offset rescue Time.now
           local_date = local_time.hour >= 19 ? @date.clone - 1 : @date.clone
           {
             wiersz: index,
