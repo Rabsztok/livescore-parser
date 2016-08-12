@@ -6,9 +6,9 @@ module LivescoreParser
     def initialize
       @agent = Mechanize.new
       @offset = Time.new.utc_offset + (5 * 3600)
-      cookie = Mechanize::Cookie.new('tz', (@offset / 3600).to_s)
+      cookie = Mechanize::Cookie.new('tz', (@offset / 3600).to_f.to_s)
       cookie.path = '/'
-      cookie.domain = '.www.livescore.com'
+      cookie.domain = '.www.livescores.com'
       @agent.cookie_jar.add(cookie)
     end
 
